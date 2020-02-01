@@ -1,0 +1,84 @@
+<div class="jumbotron">
+<h1>Calendario Guardias</h1>
+<div class="">
+  <h3>Código colores</h3>
+  <table style="text-align:center;">
+<!--    <tr>
+      <th>José</th><th>Gregorio</th><th>Antonio</th><th>Mercedes</th>
+    </tr>   -->
+
+    <tr>
+      <td class="J CC">José</td><td class="G CC">Gregorio</td>
+      <td class="A CC">Antonio</td><td class="M CC">Mercedes</td>
+    </tr>
+    <tr>
+      <td class="JF CC">Festivo</td><td class="GF CC">Festivo</td>
+      <td class="AF CC">Festivo</td><td class="MF CC">Festivo</td>
+    </tr>
+  </table>
+  <!--<app-listado-turnos></app-listado-turnos>-->
+</div>
+<div class="container" *ngIf="showCalendario">
+<table>
+
+    <tr>
+      <th colspan="2"><button (click)="anyoChange(-1)" type="submit"><<</button></th>
+      <th colspan="3">{{calenData.anyo}}</th>
+      <th colspan="2"><button (click)="anyoChange(1)" type="submit">>></button></th>
+    </tr>
+    <tr>
+      <th colspan="2"><button (click)="mesChange(-1)" type="submit"><--</button></th>
+      <th colspan="3">{{meses[calenData.mes]}}</th>
+      <th colspan="2"><button (click)="mesChange(1)" type="submit">--></button></th>
+    </tr>
+    <tr>
+       <tr *ngIf="showCalendario" ><th>lunes</th><th>martes</th><th>miércoles</th><th>jueves</th><th>viernes</th><th>sábado</th><th>domingo</th></tr>
+       <tr *ngIf="!showCalendario"><th>L</th><th>M</th><th>X</th><th>J</th><th>V</th><th>S</th><th>D</th></tr>
+       <tr *ngFor='let semana of diasMes'>
+      <td *ngFor='let calen of semana;let k=index;' class="{{calen.clase}}" (click)="fecha(calen)">
+                        {{calen.dia}}
+                     </td>
+                   </tr>
+                   <tr><td colspan="7">
+                     <select class="form-control" name="sel" #sel="ngModel"  [(ngModel)]="calenData.sel" (change)="createCalendario()">
+                       <option selected="selected">{{calenData.sel}}</option>
+                     <option value="3">Trimestre</option>
+                     <option value="6">Semestre</option>
+                     <option value="9">9 Meses</option>
+                     <option value="12">Anual</option>
+                   </select>
+
+                   </td>
+                   </tr>
+                   </table>
+</div>
+
+<div class="" *ngIf="!showCalendario">
+  <div class="miclase" *ngFor="let diasMes of diasMesesSeleccionados;let i=index;">
+    <table>
+        <tr>
+          <th colspan="7">{{listAnyos[i]}}</th>
+        </tr>
+        <tr>
+          <th colspan="7">{{mesesSeleccionados[i]}}</th>
+        </tr>
+        <tr>
+           <tr><th>L</th><th>M</th><th>X</th><th>J</th><th>V</th><th>S</th><th>D</th></tr>
+           <tr *ngFor='let semana of diasMes,let j = index;'>
+
+          <td *ngFor='let calen of semana;let k=index;' (click)="fecha(calen.dia,mesesSeleccionados[i])"
+          class="{{calen.clase}}">
+                            {{calen.dia}}
+                            <!--   'alert-warning':dia==6 -->
+                         </td>
+                       </tr>
+                       <tr>
+                         <td colspan="7"><button type="submit" (click)="showCalendario=true;initData()" class="form-control btn btn-warning">Atras</button></td>
+                       </tr>
+                       </table>
+
+
+    </div>
+  </div>
+
+</div>

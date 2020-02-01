@@ -1,0 +1,100 @@
+table{
+  margin: 0 auto;
+  border: solid 1px;
+  border-collapse: collapse;
+  text-align: center;
+}
+td{
+  border: solid 1px;
+  width: auto;
+}
+th{
+  border: solid 1px;
+  min-width: 4em;
+}
+.letras{
+  min-width: 1000px;
+}
+div{
+  text-align: center;
+}
+.color{
+  background-color: #BDFC72;
+}
+.miclase{
+  text-align: left;
+  display:inline-block;
+  margin-left: 4%;
+  margin-top:4%;
+
+}
+.J:hover{
+  font-size: 2em;
+}
+.G:hover{
+  font-size: 2em;
+}
+.A:hover{
+  font-size: 2em;
+}
+.M:hover{
+  font-size: 2em;
+}
+.JF:hover{
+  font-size: 2em;
+}
+.GF:hover{
+  font-size: 2em;
+}
+.AF:hover{
+  font-size: 2em;
+}
+.MF:hover{
+  font-size: 2em;
+}
+.J{
+
+  background: linear-gradient(to right, #229954, #220000);
+  color:white;
+
+}
+.G{
+  background: linear-gradient(to right, #E67E22, #220000);
+  color:white;
+}
+.A{
+  background: linear-gradient(to right, #3498DB, #220000);
+  color:white;
+}
+.M{
+  background: linear-gradient(to right, #7D3C98, #220000);
+  color:white;
+}
+/* #F4FB05  #05FBF4        */
+.JF{
+
+  background: linear-gradient(to right, #220000, #229954);
+  color:white;
+
+}
+.GF{
+  background: linear-gradient(to right, #220000, #E67E22);
+  color:white;
+}
+.AF{
+  background: linear-gradient(to right, #220000, #3498DB);
+  color:white;
+}
+.MF{
+  background: linear-gradient(to right, #220000, #7D3C98);
+  color:white;
+}
+.CC{
+  height:20px;
+  width:118px;
+}
+.btn{
+  background: linear-gradient(to right, #F4FB05, #05FBF4);
+  color:red;
+  font-size: 1.2em;
+}
